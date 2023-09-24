@@ -1,0 +1,418 @@
+/* ------------ GOOGLE FONTS ------------ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700;900&display=swap");
+
+/* ------------ CUSTOM PROPERTY ------------ */
+:root {
+  /* ------------------------------------------------- *\
+                  COLORS
+  \* ------------------------------------------------- */
+
+  --salmon-pink: hsl(353, 100%, 78%); /* PAGE PRIMARY COLOR */
+  --sandy-brown: hsl(29, 90%, 65%); /* RATING COLOR */
+  --ocean-green: hsl(152, 51%, 52%); /* DISCOUNT OFFER COLOR */
+  --cultured: hsl(0, 0%, 93%); /* FOR SCROLLBAR TRACK */
+  --silver: hsl(0, 0%, 47%);
+  --gray: hsl(0, 0%, 30%);
+  --red-color: hsl(0, 100%, 70%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --white-color: hsl(0, 100%, 100%);
+  --background-color: hsl(0, 100%, 100%);
+  --text-color-light: rgb(60, 60, 60);
+  --text-color-dark: rgb(0, 0, 0);
+  --title-color: hsl(0, 0, 13%);
+  --black-color: hsl(0, 0%, 15%);
+
+  /* ------------------------------------------------- *\
+                  FONT & TYPOGRAPHY
+  \* ------------------------------------------------- */
+
+  --bodyfont: "Poppins", sans-serif;
+
+  --biggest-fs: 2rem; /* 32px */
+  --h1-fs: 1.5rem; /* 24px */
+  --h2-fs: 1.25rem; /* 20px */
+  --h3-fs: 1rem; /* 16px */
+  --normal-fs: 0.938rem; /* 15.008px */
+  --small-fs: 0.813rem; /* 13.008px */
+  --smaller-fs: 0.75rem; /* 12px */
+
+  --light-font-weight-300: 300;
+  --medium-font-weight-500: 500;
+  --semiBold-font-weight-600: 600;
+  --bold-font-weight-700: 700;
+  --Black-font-weight-900: 900;
+
+  /* ------------------------------------------------- *\
+                  TRANSITION TIMING
+  \* ------------------------------------------------- */
+
+  --transition-timing: 0.2s ease;
+}
+
+/* ------------------------------------------------- *\
+                        RESET
+\* ------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: scroll; /* IMPORTANT FOR SCROLLBAR */
+}
+
+body {
+  font-family: var(--bodyfont);
+  font-size: var(--normal-fs);
+  color: var(--text-color-dark);
+  background-color: var(--white-color);
+}
+
+/* REMOVE BLUE HIGHLIGHT COLOR WHEN USER SELECTS A LINK */
+button, li {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input::placeholder {
+  font: inherit;
+}
+
+img,
+ion-icon,
+button,
+a {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--semiBold-font-weight);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  background: none;
+  font-family: var(--bodyfont);
+  font-size: var(--normal-fs);
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+
+/* ------------------------------------------------- *\
+                  SCROLLBAR STYLE
+\* ------------------------------------------------- */
+
+body::-webkit-scrollbar {
+  width: 0.9375rem; /* 15px */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(143, 143, 143);
+}
+
+/* ------------------------------------------------- *\
+                  REUSABLE CSS CLASSES
+\* ------------------------------------------------- */
+/* 
+.section {
+  padding: 4.5rem 0 2rem; /* +TOP LEFT_&_RIIGHT BOTTOM *&/
+} */
+
+/* .section_title {
+  text-align: center;
+  font-size: var(--h2-fs);
+  margin-bottom: 2rem;
+} */
+
+.container {
+  padding: 0 15px;
+}
+
+.header-logo{
+  -webkit-tap-highlight-color: transparent;
+}
+
+.has-scrollbar {
+  padding-bottom: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 12px; /* FOR VERTICAL SCROLL */
+  height: 12px; /* FOR HORIZONTAL SCROLL */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 3px solid var(--white-color);
+  border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 90%);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0, 80%);
+}
+
+/* HEADER [ Necessary for desktop users ] */
+.top-header,
+.header-user-actions,
+.desktop-nav-menu {
+  display: none;
+}
+
+/* MOBILE HEADER */
+.main-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cultured);
+}
+
+.site-logo {
+  display: flex;
+  width: 120px;
+  height: 100px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+/* SEARCH-FIELD */
+.header-search-container {
+  position: relative;
+}
+
+.search-field {
+  border: 1px solid var(--cultured);
+  border-radius: 10px;
+  padding: 14px 15px;
+  padding-right: 40px;
+  font-size: var(--h3-fs);
+  color: var(--text-color-dark);
+}
+
+.search-field::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-btn {
+  background: var(--white-color);
+  font-size: 20px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  color: var(--black-color);
+  position: absolute;
+  top: 11%;
+  right: 7px;
+  transition: color var(--transition-timing); /* --transition timing = 0.2s ease */
+}
+
+#search-btn-icon{
+  --ionicon-stroke-width: 20px;
+}
+
+.search-btn:hover {
+  color: var(--salmon-pink);
+}
+
+/* MOBILE BOTTOM NAVIGATION */
+.mobile-bottom-navigation {
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 5;
+}
+
+.action-btn {
+  display: flex;
+  position: relative;
+  font-size: 29px;
+  color: var(--black-color);
+  font-weight: var(--light-font-weight-300);
+}
+
+.count {
+  background: var(--red-color);
+  font-size: 10px;
+  font-weight: var(--medium-font-weight-500);
+  color: var(--white-color);
+  position: absolute;
+  top: -7px;
+  right: -16px;
+  padding: 2px 6px;
+  border-radius: 20px;
+}
+
+.mobile-nav-menu {
+  background: white;
+  width: 100%;
+  max-width: 320px;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  padding: 15px;
+  box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.1);
+  overflow-y: scroll; /* THIS PROPERTY ADDS A SCROLLBAR FOR VERY SMALL SCREEN DEVICES. YOU SET THIS PROPERTY TO THE CONTAINER (i.e. mobile-nav-menu*/
+  overscroll-behavior: contain; /* ENSURES USER SCROLL ACTION ONLY AFFECTS THIS CLASS --> mobile-nav-menu */
+  transition: .7s ease;
+  z-index: 200;
+}
+
+.mobile-nav-menu.show {
+  display: block;
+  left: 0;
+}
+
+/* MOBILE NAVIGATION MENU */
+.menu-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--cultured);
+}
+
+.menu-title {
+  font-size: var(--h2-fs);
+  font-weight: var(--bold-font-weight-700);
+  color: var(--salmon-pink);
+  padding-top: 3px;
+}
+
+#menu-top-close-btn {
+  font-size: 25px;
+  color: var(--black-color);
+  --ionicon-stroke-width: 50px;
+}
+
+/* MOBILE NAV MENU */
+.mobile-menu-nav-list {
+  margin-bottom: 10px;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid var(--cultured);
+}
+
+.accordion-content{
+
+}
+
+.accordion-menu {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  padding: 13px 0;
+  color: var(--black-color);
+  font-size: var(--h3-fs);
+  font-weight: var(--medium-font-weight-500);
+}
+
+.accordion-outlines {
+  font-size: 14px;
+}
+
+.accordion-outlines ion-icon {
+  font-size: 16px;
+  color: var(--black-color);
+  --ionicon-stroke-width: 90px;
+}
+
+.fa-plus{
+  color: var(--black-color);
+}
+
+.fa-minus{
+  color: var(--black-color);
+}
+
+.submenu-nav-list{
+  max-height: 0px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  transition: .7s ease;
+  overflow: scroll;
+  display: none;
+}
+
+.submenu-nav-list.show{
+  max-height: 270px;
+  display: block;
+}
+
+
+.submenu-nav-link{
+  color: var(--silver);
+  margin: 6px 0;
+}
+
+
+
+/* MOBILE MENU SOCIAL CONTAINER */
+.mobile-menu-social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.social-link {
+  background: var(--cultured);
+  color: var(--black-color);
+  font-size: 23px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
