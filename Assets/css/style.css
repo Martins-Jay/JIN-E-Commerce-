@@ -342,10 +342,6 @@ body::-webkit-scrollbar-thumb:hover {
   border-bottom: 1px solid var(--cultured);
 }
 
-.accordion-content{
-
-}
-
 .accordion-menu {
   width: 98%;
   display: flex;
