@@ -13,11 +13,22 @@ closeMenuBtn?.addEventListener("click", () => {
   showNavBar?.classList.toggle("show");
 });
 
+function removeShow(index) {
+  submenuNavList.forEach((value2, index2) => {
+    const clickedBtn2 =
+      value2.previousElementSibling?.querySelector(".fa-minus");
+
+    if (index != index2) {
+      value2.classList.remove("show");
+
+      clickedBtn2?.classList.replace("fa-minus", "fa-plus");
+    }
+  });
+}
 
 // ACCORDION MENU
-submenuNavList.forEach((value) => {
+submenuNavList.forEach((value, index) => {
   let accordionMenu = value.parentElement?.querySelector(".accordion-menu");
-
   const clickedBtn = value.previousElementSibling?.querySelector(".fa-plus");
 
   accordionMenu?.addEventListener("click", () => {
@@ -28,5 +39,7 @@ submenuNavList.forEach((value) => {
     } else if (clickedBtn?.classList.contains("fa-minus")) {
       clickedBtn?.classList.replace("fa-minus", "fa-plus");
     }
+
+    removeShow(index);
   });
 });
