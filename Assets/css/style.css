@@ -29,7 +29,7 @@
   --bodyfont: "Poppins", sans-serif;
 
   --biggest-fs: 2rem; /* 32px */
-  --h1-fs: 1.5rem; /* 24px */
+  --h1-fs: 1.5rem; /* 28px */
   --h2-fs: 1.25rem; /* 20px */
   --h3-fs: 1rem; /* 16px */
   --normal-fs: 0.938rem; /* 15.008px */
@@ -71,10 +71,16 @@ body {
   font-size: var(--normal-fs);
   color: var(--text-color-dark);
   background-color: var(--white-color);
+  user-select: none;
+  -webkit-user-select: none;     /* For Chrome, Opera, Safari */
+  -moz-user-select: none;        /* For FireFox */
+  -khtml-user-select: none;      /* For Konqueror */
+  -webkit-touch-callout: none;   /* for iOS Safari */
 }
 
 /* REMOVE BLUE HIGHLIGHT COLOR WHEN USER SELECTS A LINK */
-button, li {
+button,
+li {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -165,7 +171,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 0 15px;
 }
 
-.header-logo{
+.header-logo {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -207,8 +213,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 .site-logo {
   display: flex;
-  width: 120px;
-  height: 100px;
+  width: 110px;
+  height: 90px;
   padding-bottom: 20px;
   margin: 0 auto;
 }
@@ -243,7 +249,7 @@ body::-webkit-scrollbar-thumb:hover {
   transition: color var(--transition-timing); /* --transition timing = 0.2s ease */
 }
 
-#search-btn-icon{
+#search-btn-icon {
   --ionicon-stroke-width: 20px;
 }
 
@@ -300,11 +306,11 @@ body::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.1);
   overflow-y: scroll; /* THIS PROPERTY ADDS A SCROLLBAR FOR VERY SMALL SCREEN DEVICES. YOU SET THIS PROPERTY TO THE CONTAINER (i.e. mobile-nav-menu*/
   overscroll-behavior: contain; /* ENSURES USER SCROLL ACTION ONLY AFFECTS THIS CLASS --> mobile-nav-menu */
-  transition: .7s ease;
+  transition: 0.7s ease;
   z-index: 200;
 }
 
-.mobile-nav-menu.show {
+.showMenu {
   display: block;
   left: 0;
 }
@@ -366,35 +372,32 @@ body::-webkit-scrollbar-thumb:hover {
   --ionicon-stroke-width: 90px;
 }
 
-.fa-plus{
+.fa-plus {
   color: var(--black-color);
 }
 
-.fa-minus{
+.fa-minus {
   color: var(--black-color);
 }
 
-.submenu-nav-list{
+.submenu-nav-list {
   max-height: 0px;
   margin-left: 10px;
   margin-bottom: 15px;
-  transition: .7s ease;
+  transition: 0.7s ease;
   overflow: scroll;
   display: none;
 }
 
-.submenu-nav-list.show{
+.submenu-nav-list.show {
   max-height: 270px;
   display: block;
 }
 
-
-.submenu-nav-link{
+.submenu-nav-link {
   color: var(--silver);
   margin: 6px 0;
 }
-
-
 
 /* MOBILE MENU SOCIAL CONTAINER */
 .mobile-menu-social-container {
@@ -411,4 +414,67 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
+}
+
+/* MAIN */
+.home_group {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.home_image {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.shop_now_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.600);
+  font-size: 18px;
+  font-weight: var(--bold-font-weight-700);
+  letter-spacing: 1px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  position: absolute;
+  right: 3%;
+  top: 86%;
+}
+
+.swiper-text {
+  font-size: var(--h1-fs);
+  letter-spacing: 2.5px;
+  color: rgba(0, 0, 0, 0.512);
+  font-size: 35px;
+  font-weight: var(--Black-font-weight-900);
+  text-transform: capitalize;
+  position: absolute;
+  top: 48%;
+  left: 10px;
+}
+
+/* IF WE NEED PAGINATION */
+/* .swiper-pagination {
+  position: initial;
+  margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background-color: var(--black-color);
+} */
+
+.hidden {
+  transform: translateX(100%);
+}
+
+.hidden.show {
+  transform: translateX(0);
+  transition: transform 2s ease;
 }
