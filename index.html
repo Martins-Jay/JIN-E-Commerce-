@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
-<body>
+<body class="body">
   <!---------------- HEADER ------------------>
   <header class="header" id="header">
 
@@ -60,7 +60,7 @@
         <!-- LOGO, SEARCH CONTAINER AND USER ACTIONS -->
 
         <a href="#" class="header-logo">
-          <img src="./Assets/images/New logo.png" class="site-logo" alt="JIN Logo">
+          <img src="./Assets/images/JIN LOGO.png" class="site-logo" alt="JIN Logo">
         </a>
 
         <div class="header-search-container">
@@ -245,7 +245,7 @@
       <ul class="mobile-menu-nav-list">
 
         <li class="mobile-nav-item"> <!-- HOME -->
-          <a href="#" class="nav-title">Home</a>
+          <a href="http://google.com" class="nav-title nav-link">Home</a>
         </li>
 
         <li class="mobile-nav-item"> <!-- MEN'S -->
@@ -260,39 +260,39 @@
             <ul class="submenu-nav-list"> <!-- SUBMENU -->
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Shirts</a>
+                <a href="" class="submenu-nav-link nav-link">Shirts</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">T-Shirts</a>
+                <a href="" class="submenu-nav-link nav-link">T-Shirts</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Polo Shirts</a>
+                <a href="" class="submenu-nav-link nav-link">Polo Shirts</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Sweat Shirts</a>
+                <a href="" class="submenu-nav-link nav-link">Sweat Shirts</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Suits</a>
+                <a href="" class="submenu-nav-link nav-link">Suits</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Trousers</a>
+                <a href="" class="submenu-nav-link nav-link">Trousers</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Jeans</a>
+                <a href="" class="submenu-nav-link nav-link">Jeans</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Hoodie</a>
+                <a href="" class="submenu-nav-link nav-link">Hoodie</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Joggers</a>
+                <a href="" class="submenu-nav-link nav-link">Joggers</a>
               </li>
 
             </ul>
@@ -312,23 +312,23 @@
             <ul class="submenu-nav-list"> <!-- SUBMENU -->
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Ties & Pocket Squares</a>
+                <a href="" class="submenu-nav-link nav-link">Ties & Pocket Squares</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Lapel Pins</a>
+                <a href="" class="submenu-nav-link nav-link">Lapel Pins</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Cufflinks</a>
+                <a href="" class="submenu-nav-link nav-link">Cufflinks</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Hats</a>
+                <a href="" class="submenu-nav-link nav-link">Hats</a>
               </li>
 
               <li class="submenu-list-item">
-                <a href="" class="submenu-nav-link">Face Cap</a>
+                <a href="" class="submenu-nav-link nav-link">Face Cap</a>
               </li>
 
             </ul>
@@ -350,7 +350,7 @@
 
             <ul class="submenu-nav-list">
               <li class="submenu-nav-item">
-                <a href="" class="submenu-nav-link">Coming Soon</a>
+                <a href="" class="submenu-nav-link nav-link">Coming Soon</a>
               </li>
             </ul>
           </div>
@@ -388,18 +388,55 @@
 
   </header>
 
+  <!---------------- MAIN ------------------>
   <main class="main">
-    <section class="home container" id="home">
-      
+    <section class="home-section container" id="home-section">
+
       <!-- SLIDER MAIN CONTAINER -->
       <div class="swiper home-swiper">
         <!-- ADDITIONAL REQUIRED WRAPPER-->
         <div class="swiper-wrapper">
           <!-- HOME SLIDER 1 -->
-          <div class="swiper-slider">
-            
+          <div class="swiper-slide">
+
+            <div class="home_group">
+
+              <img src="./Assets/images/Homepage images/Shop with us colored.png" class="home_image"
+                alt="Shop with us image">
+
+              <div class="swiper-text hidden" id="swiper-text">
+                SUMMER SALES!
+              </div>
+
+              <button class="shop_now_btn">
+                SHOP NOW <i class="fa-sharp fa fa-arrow-right"></i>
+              </button>
+
+            </div>
+
           </div>
+
+          <!-- HOME SLIDER 2 -->
+          <div class="swiper-slide">
+
+            <div class="home_group">
+
+              <img src="./Assets/images/Homepage images/Stay classy.png" class="home_image" alt="Shop with us image">
+
+              <div class="swiper-text hidden" id="swiper-text">
+                REAL<br>FASHION</br>
+              </div>
+
+              <button class="shop_now_btn">
+                SHOP NOW <i class="fa-sharp fa fa-arrow-right"></i>
+              </button>
+            </div>
+
+          </div>
+          
         </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
 
     </section>
