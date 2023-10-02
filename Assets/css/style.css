@@ -1,3 +1,6 @@
+/* ------------ LOGIN CSS FILE ------------ */
+@import url("login.css");
+
 /* ------------ GOOGLE FONTS ------------ */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700;900&display=swap");
 
@@ -10,7 +13,7 @@
   --salmon-pink: hsl(353, 100%, 78%); /* PAGE PRIMARY COLOR */
   --sandy-brown: hsl(29, 90%, 65%); /* RATING COLOR */
   --ocean-green: hsl(152, 51%, 52%); /* DISCOUNT OFFER COLOR */
-  --cultured: hsl(0, 0%, 93%); /* FOR SCROLLBAR TRACK */
+  --cultured: hsl(0, 0%, 90%); /* FOR SCROLLBAR TRACK */
   --silver: hsl(0, 0%, 47%);
   --gray: hsl(0, 0%, 30%);
   --red-color: hsl(0, 100%, 70%);
@@ -64,23 +67,25 @@
 html {
   scroll-behavior: smooth;
   overflow: scroll; /* IMPORTANT FOR SCROLLBAR */
+  height: 100%;
 }
 
 body {
   font-family: var(--bodyfont);
   font-size: var(--normal-fs);
   color: var(--text-color-dark);
-  background-color: var(--white-color);
+  background-color: whitesmoke;
+  height: 100%;
   user-select: none;
-  -webkit-user-select: none;     /* For Chrome, Opera, Safari */
-  -moz-user-select: none;        /* For FireFox */
-  -khtml-user-select: none;      /* For Konqueror */
-  -webkit-touch-callout: none;   /* for iOS Safari */
+  -webkit-user-select: none; /* For Chrome, Opera, Safari */
+  -moz-user-select: none; /* For FireFox */
+  -khtml-user-select: none; /* For Konqueror */
+  -webkit-touch-callout: none; /* for iOS Safari */
 }
 
 /* REMOVE BLUE HIGHLIGHT COLOR WHEN USER SELECTS A LINK */
 button,
-li {
+li, a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -127,7 +132,6 @@ button {
 
 input {
   display: block;
-  width: 100%;
 }
 
 /* ------------------------------------------------- *\
@@ -156,9 +160,9 @@ body::-webkit-scrollbar-thumb:hover {
 /* ------------------------------------------------- *\
                   REUSABLE CSS CLASSES
 \* ------------------------------------------------- */
-/* 
-.section {
-  padding: 4.5rem 0 2rem; /* +TOP LEFT_&_RIIGHT BOTTOM *&/
+
+/* .section {
+  padding: .5rem 0 2rem; /* +TOP LEFT_&_RIIGHT BOTTOM *?/
 } */
 
 /* .section_title {
@@ -168,7 +172,12 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 
 .container {
-  padding: 0 15px;
+  max-width: 968px;
+  margin: 0 15px;
+}
+
+.main {
+  overflow: hidden;
 }
 
 .header-logo {
@@ -207,21 +216,25 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* MOBILE HEADER */
 .main-header {
-  padding: 20px 0;
   border-bottom: 1px solid var(--cultured);
+}
+
+.header-logo{
+  margin: 15px 0;
 }
 
 .site-logo {
   display: flex;
-  width: 110px;
-  height: 90px;
-  padding-bottom: 20px;
+  width: 25%;
+  height: 70px;
+  padding-bottom: 5px;
   margin: 0 auto;
 }
 
 /* SEARCH-FIELD */
 .header-search-container {
   position: relative;
+  padding-bottom: 15px;
 }
 
 .search-field {
@@ -233,9 +246,17 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--text-color-dark);
 }
 
-.search-field::-webkit-search-cancel-button {
+.search-field::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   display: none;
 }
+
+/* ,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+} */
 
 .search-btn {
   background: var(--white-color);
@@ -265,7 +286,7 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 13px 0;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -417,15 +438,21 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* MAIN */
+.swiper {
+  width: 100%;
+  height: 550px;
+  margin-top: 10px;
+}
+
 .home_group {
   display: flex;
   flex-direction: row;
   position: relative;
 }
 
-.home_image {
+.home_image {   /* CHANGE SWIPER IMAGE HEIGHT*/
   width: 100%;
-  height: 500px;
+  height: 520px;
   border: none;
 }
 
@@ -435,9 +462,9 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   column-gap: 5px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.600);
-  font-size: 18px;
-  font-weight: var(--bold-font-weight-700);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  font-weight: 400;
   letter-spacing: 1px;
   padding: 15px 15px;
   border-radius: 10px;
@@ -458,6 +485,11 @@ body::-webkit-scrollbar-thumb:hover {
   left: 10px;
 }
 
+.swiper {       
+  width: 100%;
+  height: 600px;
+}
+
 /* IF WE NEED PAGINATION */
 /* .swiper-pagination {
   position: initial;
@@ -476,5 +508,55 @@ body::-webkit-scrollbar-thumb:hover {
 
 .hidden.show {
   transform: translateX(0);
-  transition: transform 2s ease;
+  transition: transform 3s ease;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  align-items: flex-end;
+}
+
+.first-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.item-image {
+  display: flex;
+  width: 95%;
+}
+
+.gallery-section-btn {
+  background: rgba(255, 255, 255, 0.875);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding: 13px 18px;
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+.item-text-content {
+  background-color: black;
+  width: 95%;
+  color: white;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: var(--bold-font-weight-700);
+}
+
+.item-subtitle {
+  color: rgb(145, 146, 146);
+  font-size: 12px;
 }
