@@ -1,0 +1,307 @@
+:root {
+  /* ------------------------------------------------- *\
+                  COLORS
+  \* ------------------------------------------------- */
+
+  --salmon-pink: hsl(353, 100%, 78%); /* PAGE PRIMARY COLOR */
+  --sandy-brown: hsl(29, 90%, 65%); /* RATING COLOR */
+  --ocean-green: hsl(152, 51%, 52%); /* DISCOUNT OFFER COLOR */
+  --cultured: hsl(0, 0%, 93%); /* FOR SCROLLBAR TRACK */
+  --silver: hsl(0, 0%, 47%);
+  --gray: hsl(0, 0%, 30%);
+  --red-color: hsl(0, 100%, 70%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --white-color: hsl(0, 100%, 100%);
+  --background-color: hsl(0, 100%, 100%);
+  --text-color-light: rgb(60, 60, 60);
+  --text-color-dark: rgb(0, 0, 0);
+  --title-color: hsl(0, 0, 13%);
+  --black-color: hsl(0, 0%, 15%);
+
+  /* ------------------------------------------------- *\
+                  FONT & TYPOGRAPHY
+  \* ------------------------------------------------- */
+
+  --bodyfont: "Poppins", sans-serif;
+
+  --biggest-fs: 2rem; /* 32px */
+  --h1-fs: 1.5rem; /* 28px */
+  --h2-fs: 1.25rem; /* 20px */
+  --h3-fs: 1rem; /* 16px */
+  --normal-fs: 0.938rem; /* 15.008px */
+  --small-fs: 0.813rem; /* 13.008px */
+  --smaller-fs: 0.75rem; /* 12px */
+
+  --light-font-weight-300: 300;
+  --medium-font-weight-500: 500;
+  --semiBold-font-weight-600: 600;
+  --bold-font-weight-700: 700;
+  --Black-font-weight-900: 900;
+
+  /* ------------------------------------------------- *\
+                  TRANSITION TIMING
+  \* ------------------------------------------------- */
+
+  --transition-timing: 0.2s ease;
+}
+
+.login-body {
+  background-color: whitesmoke;
+  height: 70px;
+}
+
+.login-header {
+  width: 100%;
+  height: 80px;
+  margin: 20px 0;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.home {
+  font-family: var(--bodyfont);
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0.5px rgba(227, 230, 231, 0.526);
+  margin: 70px 15px;
+  padding: 17px;
+  position: relative;
+}
+
+.form-container.smaller{
+  margin: 20px 15px;
+}
+
+.form-container.show  .signup-form{
+  display: block;
+}
+
+.close-icon {
+  display: none;
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  row-gap: 20px;
+}
+
+.container-title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--h1-fs);
+  font-weight: var(--bold-font-weight-700);
+  color: black;
+  letter-spacing: 0.7px;
+  padding: 30px 0;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding-bottom: 25px;
+  margin-bottom: -4px;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 20px 20px;
+  border: 1px solid hsl(0, 0%, 93%);
+  border-radius: 10px;
+  position: relative;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border: 1px solid black;
+}
+
+.placeholder {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--spanish-gray);
+  padding: 0 5px;
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  transition: 0.5s top;
+}
+
+.input-box input:focus ~ .placeholder,
+.input-box input:valid ~ .placeholder {
+  top: -8px;
+  color: black;
+  background-color: white;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+.fa-eye-slash {
+  position: absolute;
+  color: var(--spanish-gray);
+  top: 26%;
+  right: 20px;
+}
+
+.option-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -20px;
+  padding-bottom: 30px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Text will never wrap to the next line */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  position: relative;
+}
+
+/* Hides the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  display: flex;
+  position: absolute;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: white;
+  border: 1px solid rgba(222, 222, 222, 0.788);
+  border-radius: 5px;
+}
+
+/* Adjust label */
+.checkmark-label {
+  padding-left: 24px;
+  font-size: 14px;
+}
+
+/* When the checkbox is checked, add a white background */
+input:checked ~ .checkmark {
+  background-color: white;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid rgb(83, 83, 83);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.forgot-pwd {
+  color: rgb(77, 77, 241);
+  font-size: 14px;
+}
+
+.login-btn-container,
+.signup-btn-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.signup,
+.signin {
+  color: rgb(77, 77, 241);
+  font-size: 14px;
+}
+
+.login-btn,
+.signup-btn {
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.594);
+  background: rgba(0, 0, 0, 0.855);
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.signup-btn{
+  margin-bottom: 30px;
+}
+
+.sign-up-container,
+.sign-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  padding: 0 0 15px;
+}
+
+.membership-check {
+  font-size: 14px;
+}
+
+.login-container-title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--h1-fs);
+  font-weight: var(--bold-font-weight-700);
+  color: black;
+  letter-spacing: 0.7px;
+  padding: 10px 0 30px;
+}
+
+.login-form.hide {
+  display: none;
+}
+
+.signup-form {
+  display: none;
+}
+
+.signup-form.show{
+  display: block;
+}

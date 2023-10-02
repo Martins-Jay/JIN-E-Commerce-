@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!----------- WEBSITE TITLE -------------->
+<title>Account</title>
+
+<!-------- FONTAWESOME (WEB ICONS) ---------->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+<!----------------- IONICON  ------------------>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!----------- CUSTOM CSS LINK --------------->
+<link rel="stylesheet" href="../Assets/css/style.css">
+
+<body class="login-body">
+  <header class="login-header">
+    <a href="../index.html" class="logo-link">
+      <img src="../Assets/images/JIN LOGO.png" alt="JIN Logo" class="site-logo logo-width">
+    </a>
+  </header>
+
+
+  <section class="home" id="home">
+    <div class="form-container">
+      <!-- CLOSE ICON -->
+      <i class="fa fa-xmark close-icon"></i>
+
+      <!-- LOGIN FORM -->
+      <div class="login-form">
+        <form action="#" method="get">
+          <p class="container-title">Sign in to JIN Apparel</p>
+
+          <div class="input-box"> <!-- E-MAIL -->
+            <input type="text" name="email" id="user-email" class="user-email" required>
+
+            <span class="placeholder">Email Address</span>
+          </div>
+
+          <div class="input-box"> <!-- PASSWORD -->
+            <input type="password" name="password" id="user-password" class="user-password" required>
+
+            <span class="placeholder">Password</span>
+            <i class="fa fa-eye-slash"></i>
+          </div>
+
+          <div class="option-field"> <!-- OPTION FIELD -->
+            <span class="checkbox-container">
+              <input type="checkbox" name="check" id="check">
+              <span class="checkmark"></span>
+              <label for="check" class="checkmark-label">Remember me</label>
+            </span>
+
+            <a href="#" class="forgot-pwd">Forgot Password?</a>
+          </div>
+
+          <div class="login-btn-container">
+            <button class="login-btn">Login Now</button>
+          </div>
+        </form>
+
+
+        <div class="sign-up-container">
+          <h3 class="membership-check">Not a member?</h3>
+
+          <a href="#" class="sign-up-link">
+            <button class="signup">Sign Up</button>
+          </a>
+        </div>
+
+      </div>
+
+
+
+
+      <!-- SIGNUP FORM -->
+      <div class="signup-form">
+        <form action="#" method="get">
+          <p class="login-container-title">Sign Up Today</p>
+          
+          <div class="input-box"> <!-- FIRST NAME -->
+            <input type="text" name="first-name" id="first-name" class="first-name" required>
+
+            <span class="placeholder">First Name</span>
+          </div>
+
+          <div class="input-box"> <!-- LAST NAME -->
+            <input type="text" name="last-name" id="last-name" class="last-name" required>
+
+            <span class="placeholder">Last Name</span>
+          </div>
+
+          <div class="input-box"> <!-- E-MAIL -->
+            <input type="text" name="email" id="user-email" class="user-email" required>
+
+            <span class="placeholder">Email Address</span>
+          </div>
+
+
+          <div class="input-box"> <!-- PASSWORD -->
+            <input type="password" name="password" id="user-password" class="user-password" required>
+
+            <span class="placeholder">Password</span>
+            <i class="fa fa-eye-slash eye-slash pw-hide"></i>
+          </div>
+
+          <div class="input-box"> <!-- CONFIRM PASSWORD -->
+            <input type="password" name="password-repeat" id="password-repeat" class="password-repeat" required>
+
+            <span class="placeholder">Confirm Password</span>
+            <i class="fa fa-eye-slash eye-slash pw-hide"></i>
+          </div>
+
+          <div class="signup-btn-container">
+            <button class="signup-btn">Sign Up Now</button>
+          </div>
+        </form>
+
+
+        <div class="sign-in-container">
+          <h3 class="membership-check">Already a member?</h3>
+
+          <a href="#" class="sign-in-link">
+            <button class="signin">Sign In</button>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!----------------- MAIN JS  ------------------>
+  <script src="../Assets/js/login.js" defer></script>
+</body>
+
+</html>
