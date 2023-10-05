@@ -35,7 +35,6 @@ pwShowHide.forEach((icon) => {
 });
 
 
-
 // FORM VALIDATION 
 const validateForm = (formSelector) => {
   const signupForm = document.querySelector(formSelector); //GET FORM
