@@ -29,24 +29,35 @@
       <i class="fa fa-xmark close-icon"></i>
 
       <!-- LOGIN FORM -->
-      <div class="login-form">
-        <form action="#" method="get">
+      <div class="login-container">
+        <form action="#" method="get" id="login-form">
           <p class="container-title">Sign in to JIN Apparel</p>
 
-          <div class="input-box"> <!-- E-MAIL -->
-            <input type="text" name="email" id="user-email" class="user-email" required>
+
+          <!-- E-MAIL -->
+          <div class="input-box">
+            <input type="text" class="user-email" name="email">
 
             <span class="placeholder">Email Address</span>
+            <!-- <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+              <i class="fa fa-circle-exclamation"></i>
+              Error message
+            </span> -->
           </div>
 
-          <div class="input-box"> <!-- PASSWORD -->
-            <input type="password" name="password" id="user-password" class="user-password" required>
+
+          <!-- PASSWORD -->
+          <div class="input-box">
+            <input type="password" name="password">
 
             <span class="placeholder">Password</span>
-            <i class="fa fa-eye-slash"></i>
+            <i class="fa fa-eye-slash eye-slash"></i>
           </div>
 
-          <div class="option-field"> <!-- OPTION FIELD -->
+
+          <!-- OPTION FIELD -->
+          <div class="option-field">
             <span class="checkbox-container">
               <input type="checkbox" name="check" id="check">
               <span class="checkmark"></span>
@@ -57,11 +68,12 @@
           </div>
 
           <div class="login-btn-container">
-            <button class="login-btn">Login Now</button>
+            <button type="submit" class="login-btn">Login Now</button>
           </div>
         </form>
 
 
+        <!-- SIGNUP CONTAINER -->
         <div class="sign-up-container">
           <h3 class="membership-check">Not a member?</h3>
 
@@ -76,45 +88,72 @@
 
 
       <!-- SIGNUP FORM -->
-      <div class="signup-form">
-        <form action="#" method="get">
+      <div class="signup-container ">
+        <form action="#" method="get" id="signup-form" name="">
           <p class="login-container-title">Sign Up Today</p>
-          
-          <div class="input-box"> <!-- FIRST NAME -->
-            <input type="text" name="first-name" id="first-name" class="first-name" required>
+
+          <!-- FIRST NAME -->
+          <div class="input-box">
+            <input type="text" name="first-name" id="first-name" class="first-name">
 
             <span class="placeholder">First Name</span>
+            <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+              <i class="fa fa-circle-exclamation"></i>
+              Please enter first name
+            </span>
           </div>
 
-          <div class="input-box"> <!-- LAST NAME -->
-            <input type="text" name="last-name" id="last-name" class="last-name" required>
+          <!-- LAST NAME -->
+          <div class="input-box">
+            <input type="text" value="" name="last-name" id="last-name" class="last-name">
 
             <span class="placeholder">Last Name</span>
+            <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+              <i class="fa fa-circle-exclamation"></i>
+              Please enter last name
+            </span>
           </div>
 
-          <div class="input-box"> <!-- E-MAIL -->
-            <input type="text" name="email" id="user-email" class="user-email" required>
+          <!-- E-MAIL -->
+          <div class="input-box">
+            <input type="text" name="email" id="user-email" class="user-email">
 
             <span class="placeholder">Email Address</span>
+            <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+              <i class="fa fa-circle-exclamation"></i>
+              Please enter E-Mail
+            </span>
           </div>
 
-
-          <div class="input-box"> <!-- PASSWORD -->
-            <input type="password" name="password" id="user-password" class="user-password" required>
+          <!-- PASSWORD -->
+          <div class="input-box">
+            <input type="password" name="password" id="user-password" class="user-password">
 
             <span class="placeholder">Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
+            <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+            </span>
           </div>
 
-          <div class="input-box"> <!-- CONFIRM PASSWORD -->
-            <input type="password" name="password-repeat" id="password-repeat" class="password-repeat" required>
+          <!-- CONFIRM PASSWORD -->
+          <div class="input-box">
+            <input type="password" name="password-repeat" id="password-confirm" class="password-confirm">
 
             <span class="placeholder">Confirm Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
+            <span class="error-message">
+              <i class="fa fa-circle-check"></i>
+              <i class="fa fa-circle-exclamation"></i>
+              Password does not match
+            </span>
           </div>
 
           <div class="signup-btn-container">
-            <button class="signup-btn">Sign Up Now</button>
+            <button type="signup-btn" class="signup-btn">Sign Up Now</button>
           </div>
         </form>
 
