@@ -34,7 +34,7 @@
           <p class="container-title">Sign in to JIN Apparel</p>
 
           <div class="input-box"> <!-- E-MAIL -->
-            <input type="text" name="email" class="user-email input-field" required>
+            <input type="email" name="email" class="user-email input-field" required>
 
             <span class="placeholder">Email Address</span>
           </div>
@@ -82,7 +82,7 @@
 
           <!-- FIRST NAME -->
           <div class="input-box">
-            <input type="text" name="first-name" class="input-field" required autocapitalize="sentences">
+            <input type="text" name="first-name" class="input-field" required minlength="3">
 
             <span class="placeholder">First Name</span>
 
@@ -97,7 +97,7 @@
 
           <!-- LAST NAME -->
           <div class="input-box">
-            <input type="text" name="last-name" id="last-name" class="input-field" required>
+            <input type="text" name="last-name" id="last-name" class="input-field" required minlength="2">
 
             <span class="placeholder">Last Name</span>
 
@@ -112,9 +112,9 @@
 
           <!-- E-MAIL -->
           <div class="input-box">
-            <input type="email" name="email" id="new-user-email" class="input-field" required>
+            <input type="email" name="email" class="input-field" required pattern="^(.+)@(.+)$">
 
-            <span class="placeholder">Email Address</span>
+            <span class="email placeholder">Email</span>
 
             <div class="user-notifier">
               <i class="fa fa-circle-check check-icon"></i>
@@ -127,23 +127,30 @@
 
           <!-- PASSWORD -->
           <div class="input-box">
-            <input type="password" name="password" id="new-user-password" class="input-field" required>
+            <input type="password" name="password" id="password" class="input-field" required minlength="5">
 
             <span class="placeholder">Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
 
 
           <!-- CONFIRM PASSWORD -->
           <div class="input-box">
-            <input type="password" name="password-repeat" id="password-repeat" class="input-field" required>
+            <input type="password" id="" class="input-field" required minlength="5" match="password">
 
             <span class="placeholder">Confirm Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
 
             <div class="user-notifier">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
 
               <span class="error-message"></span>
             </div>

@@ -1,22 +1,21 @@
 const home = document.querySelector(".home");
 const formContainer = document.querySelector(".form-container");
-const signUpForm = document.querySelector(".signup-container");
+const signupContainer = document.querySelector(".signup-container");
 const logInForm = document.querySelector(".login-form");
 const signUp = document.querySelector(".signup");
 const signIn = document.querySelector(".signin");
 const pwShowHide = document.querySelectorAll(".eye-slash");
 
-
 // SIGN-UP CODE
 signUp?.addEventListener("click", (e) => {
   logInForm?.classList.toggle("hide");
-  signUpForm?.classList.toggle("show");
+  signupContainer?.classList.toggle("show");
   formContainer?.classList.add("smaller");
 });
 
 // SIGN-IN CODE
 signIn?.addEventListener("click", (e) => {
-  signUpForm?.classList.remove("show");
+  signupContainer?.classList.remove("show");
   logInForm?.classList.remove("hide");
   formContainer?.classList.remove("smaller");
 });
@@ -34,44 +33,77 @@ pwShowHide.forEach((icon) => {
   });
 });
 
-
-// FORM VALIDATION 
+// FORM VALIDATION
 const validateForm = (formSelector) => {
   const signupForm = document.querySelector(formSelector); //GET FORM
 
   signupForm.setAttribute("novalidate", ""); //DISABLES BROWSER FIELDS VALIDATION
 
-  // ARRAY
   const validationOptions = [
-    // ITEMS IN THIS ARRAY = OBJECTS WITH 3 PROPERTIES
+    // MIN LENGTH VALIDATION
     {
-      // 1. ATTRIBUTE THAT WE WANT TO CHECK FOR
+      attribute: "minlength",
+
+      isValid: (input) =>
+        input.value && input.value.length >= parseInt(input.minLength, 10), //TRUE IF: INPUT VALUE > MIN-LENGTH = 2
+
+      userErrorMessage: (input, placeholder) =>
+        `${placeholder.textContent} needs to be at least ${input.minLength} characters`,
+    },
+
+    //  REQUIRED VALIDATION
+    {
       attribute: "required",
 
-      // 2. CHECK. IS INPUT FIELD EMPTY? || RETURNS TRUE/FALSE DEPENDING ON WHETHER IT IS MEETING THE ATTRIBUTED: REQUIRED AS SHOWN ABOVE
       isValid: (input) => input.value.trim() !== "", //TRUE IF FIELD IS NOT EMPTY. FALSE IF OTHERWISE
 
       userErrorMessage: (input, placeholder) =>
         `${placeholder.textContent} is required`, // textContent GIVES US THE TEXTCONTENT INSIDE PLACEHOLDER CLASS
     },
+
+    // EMAIL PATTERN VALIDATION
+    {
+      attribute: "pattern",
+
+      isValid: (input) => {
+        const patternRegex = new RegExp(input.pattern); // NEW REGULAR EXPRESSION --> Pattern of characters
+
+        return patternRegex.test(input.value); // TRUE IF USER INPUT MATCHES OUR DEFINED EMAIL PATTERN IN HTML
+      },
+
+      userErrorMessage: (input, placeholder) =>
+        `Please provide a valid ${placeholder.textContent}`,
+    },
+
+    //  PASSWORD MATCH
+    {
+      attribute: "match",
+
+      isValid: (input) => {
+        const matchSelector = input.getAttribute("match"); // Since the function takes input as parameter
+        const matchedElement = signupForm.querySelector(`#${matchSelector}`);
+
+        return (
+          matchedElement && matchedElement.value.trim() === input.value.trim()
+        );
+      },
+
+      userErrorMessage: (input, placeholder) =>
+        `Value dosen't match with password`,
+    },
   ];
 
-  // FUNCTION HELPS US MAKE THE REUSABLE CODE WHICH VALIDATES THE NORMAL FORM ITSELF
   const validateEachInputBox = (inputBox) => {
-    //FIRST WE GET EACH OF THE ELEMENTS IN THE INPUTBOX
     const input = inputBox.querySelector("input");
     const inputField = inputBox.querySelector(".input-field");
-    const placeholder = inputBox.querySelector("span");
+    const placeholder = inputBox.querySelector(".placeholder");
     const errorMessage = inputBox.querySelector(".error-message");
     const errorIcon = inputBox.querySelector(".error-icon");
     const successIcon = inputBox.querySelector(".check-icon");
 
-    // LOOP
     let formGroupError = false;
 
-    // THEN WE LOOP THROUGH ALL OF THE validationOptions
     for (const option of validationOptions) {
-      //  && --> is true if and only if all the operands are true
       if (
         input.hasAttribute(option.attribute) &&
         option.isValid(input) === false
@@ -87,17 +119,22 @@ const validateForm = (formSelector) => {
         errorMessage.textContent = "";
         successIcon.classList.add("success");
         errorIcon.classList.remove("error");
-        inputField.add("transparent");
-        input.style.border = "1px solid green";
+        input.style.border = "1px solid rgb(11, 231, 11)";
       }
     }
   };
 
-  // MY CUSTOM VALIDATION (WE CREATE A COUPLE OF FUNCTIONS)
-  const validateAllFormGroups = (signupForm) => {
-    // lets grab all the --> input-box <-- in our html file since it holds all the important elements.
-    // We cn store them in an array.
+  const signupFormArray = Array.from(signupForm.elements);
 
+  // BLUR
+  signupFormArray.forEach((arrayValue) => {
+    arrayValue.addEventListener("blur", (event) => {
+      const value = validateEachInputBox(event.srcElement.parentElement);
+      console.log(value);
+    });
+  });
+
+  const validateAllFormGroups = (signupForm) => {
     const inputBoxes = Array.from(
       signupForm.querySelectorAll(".input-box") // Converts NodeList into Array
     );
