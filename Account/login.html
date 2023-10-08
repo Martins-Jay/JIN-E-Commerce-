@@ -29,35 +29,24 @@
       <i class="fa fa-xmark close-icon"></i>
 
       <!-- LOGIN FORM -->
-      <div class="login-container">
-        <form action="#" method="get" id="login-form">
+      <div class="login-form">
+        <form action="#" method="get">
           <p class="container-title">Sign in to JIN Apparel</p>
 
-
-          <!-- E-MAIL -->
-          <div class="input-box">
-            <input type="text" class="user-email" name="email">
+          <div class="input-box"> <!-- E-MAIL -->
+            <input type="email" name="email" class="user-email input-field" required>
 
             <span class="placeholder">Email Address</span>
-            <!-- <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
-              Error message
-            </span> -->
           </div>
 
-
-          <!-- PASSWORD -->
-          <div class="input-box">
-            <input type="password" name="password">
+          <div class="input-box"> <!-- PASSWORD -->
+            <input type="password" name="password" class="user-password input-field" required>
 
             <span class="placeholder">Password</span>
-            <i class="fa fa-eye-slash eye-slash"></i>
+            <i class="fa fa-eye-slash eye-slash pw-hide"></i>
           </div>
 
-
-          <!-- OPTION FIELD -->
-          <div class="option-field">
+          <div class="option-field"> <!-- OPTION FIELD -->
             <span class="checkbox-container">
               <input type="checkbox" name="check" id="check">
               <span class="checkmark"></span>
@@ -68,12 +57,11 @@
           </div>
 
           <div class="login-btn-container">
-            <button type="submit" class="login-btn">Login Now</button>
+            <button class="login-btn">Login Now</button>
           </div>
         </form>
 
 
-        <!-- SIGNUP CONTAINER -->
         <div class="sign-up-container">
           <h3 class="membership-check">Not a member?</h3>
 
@@ -88,72 +76,88 @@
 
 
       <!-- SIGNUP FORM -->
-      <div class="signup-container ">
-        <form action="#" method="get" id="signup-form" name="">
+      <div class="signup-container">
+        <form action="#" method="get" id="signup-form">
           <p class="login-container-title">Sign Up Today</p>
 
           <!-- FIRST NAME -->
           <div class="input-box">
-            <input type="text" name="first-name" id="first-name" class="first-name">
+            <input type="text" name="first-name" class="input-field" required minlength="3">
 
             <span class="placeholder">First Name</span>
-            <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
-              Please enter first name
-            </span>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
+
 
           <!-- LAST NAME -->
           <div class="input-box">
-            <input type="text" value="" name="last-name" id="last-name" class="last-name">
+            <input type="text" name="last-name" id="last-name" class="input-field" required minlength="2">
 
             <span class="placeholder">Last Name</span>
-            <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
-              Please enter last name
-            </span>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
+
 
           <!-- E-MAIL -->
           <div class="input-box">
-            <input type="text" name="email" id="user-email" class="user-email">
+            <input type="email" name="email" class="input-field" required pattern="^(.+)@(.+)$">
 
-            <span class="placeholder">Email Address</span>
-            <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
-              Please enter E-Mail
-            </span>
+            <span class="email placeholder">Email</span>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
+
 
           <!-- PASSWORD -->
           <div class="input-box">
-            <input type="password" name="password" id="user-password" class="user-password">
+            <input type="password" name="password" id="password" class="input-field" required minlength="5">
 
             <span class="placeholder">Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
-            <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-            </span>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
+
 
           <!-- CONFIRM PASSWORD -->
           <div class="input-box">
-            <input type="password" name="password-repeat" id="password-confirm" class="password-confirm">
+            <input type="password" id="" class="input-field" required minlength="5" match="password">
 
             <span class="placeholder">Confirm Password</span>
             <i class="fa fa-eye-slash eye-slash pw-hide"></i>
-            <span class="error-message">
-              <i class="fa fa-circle-check"></i>
-              <i class="fa fa-circle-exclamation"></i>
-              Password does not match
-            </span>
+
+            <div class="user-notifier">
+              <i class="fa fa-circle-check check-icon"></i>
+              <i class="fa fa-circle-exclamation error-icon"></i>
+
+              <span class="error-message"></span>
+            </div>
           </div>
 
           <div class="signup-btn-container">
-            <button type="signup-btn" class="signup-btn">Sign Up Now</button>
+            <button class="signup-btn">Sign Up Now</button>
           </div>
         </form>
 
